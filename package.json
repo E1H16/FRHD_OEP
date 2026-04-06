@@ -1,0 +1,25 @@
+{
+    "name": "frhd-offline-editor",
+    "version": "0.1.0-alpha",
+    "description": "Offline track editor for Free Rider HD",
+    "private": true,
+    "scripts": {
+        "lint": "eslint . --ignore-pattern game.js --ignore-pattern offlineeditor.js",
+        "lint:fix": "eslint . --fix --ignore-pattern game.js --ignore-pattern offlineeditor.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/E1H16/FRHD_OEP.git"
+    },
+    "keywords": [
+        "free-rider-hd",
+        "track-editor",
+        "offline",
+        "canvas",
+        "game"
+    ],
+    "author": "E1H16",
+    "devDependencies": {
+        "eslint": "^8.57.0"
+    }
+}
