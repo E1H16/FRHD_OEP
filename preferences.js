@@ -20,7 +20,8 @@ var UserPreferences = (function () {
         lowQualityMode: false,
         soundsEnabled: true,
         gridEnabled: false,
-        snapEnabled: false
+        snapEnabled: false,
+        autoSaveEnabled: true
     };
 
     var current = {};
@@ -73,6 +74,7 @@ var UserPreferences = (function () {
                 GameSettings.startTool = current.tool;
                 GameSettings.lowQualityMode = current.lowQualityMode;
                 GameSettings.soundsEnabled = current.soundsEnabled;
+                GameSettings.autoSaveEnabled = current.autoSaveEnabled;
 
                 if (GameSettings.toolHandler) {
                     GameSettings.toolHandler.grid = current.gridEnabled;

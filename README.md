@@ -13,6 +13,10 @@
 - 📦 **Import / Export** — Load and save tracks as track code
 - ⌨️ **Keyboard Shortcuts** — Full set of editor and play hotkeys
 - 🔌 **Offline First** — Works without an internet connection
+- 💾 **Auto-Save** — Automatically saves your work to localStorage every 30 seconds
+- 🔄 **Crash Recovery** — Recovers your last track if the app closes unexpectedly
+- ⚡ **Fast Offline Start** — Assets time out in 5 seconds offline (vs. 5 minutes online)
+- 📡 **Connectivity Awareness** — Notifies you when going online/offline
 
 ## Getting Started
 
@@ -62,6 +66,7 @@ FRHD_OEP/
 ├── trackValidator.js   # Track code validation & sanitization
 ├── errorHandler.js     # Error handling utilities (storage, files, network)
 ├── preferences.js      # User preference persistence
+├── offlineReady.js     # Offline detection, auto-save & crash recovery
 ├── package.json        # Node.js project metadata & dev dependencies
 ├── .eslintrc.json      # ESLint configuration
 ├── .prettierrc         # Prettier formatting rules
@@ -110,6 +115,7 @@ Game settings can be adjusted in `settings.js`. Key configuration areas:
 - **Camera**: `cameraStartZoom`, `cameraZoomMin`, `cameraZoomMax`
 - **Tools**: `toolHandler` (grid, snap, line type)
 - **Controls**: `playHotkeys`, `editorHotkeys`
+- **Offline**: `offlineMode`, `autoSaveEnabled`, `autoSaveIntervalMs`
 
 ## Known Limitations (Alpha)
 

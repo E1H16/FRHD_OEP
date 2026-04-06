@@ -175,6 +175,8 @@ var ErrorHandler = (function () {
 
         /**
          * Fetch a URL with timeout and optional retry.
+         * Skips the request immediately when the browser is offline,
+         * returning a clear error message instead of waiting for timeout.
          * @param {string} url
          * @param {object} [options]
          * @param {number} [options.timeout] - Timeout in ms (default 30 s).
@@ -183,6 +185,12 @@ var ErrorHandler = (function () {
          * @param {function} onError - Callback with error message.
          */
         safeFetch: function (url, options, onSuccess, onError) {
+            // Fail fast when offline — no point waiting for network timeout
+            if (!navigator.onLine) {
+                onError("You are offline. This request requires an internet connection.");
+                return;
+            }
+
             var timeout = (options && options.timeout) || DEFAULT_NETWORK_TIMEOUT_MS;
             var retries = (options && options.retries !== undefined) ? options.retries : MAX_RETRY_ATTEMPTS;
             var attempt = 0;

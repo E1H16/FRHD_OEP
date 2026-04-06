@@ -10,7 +10,10 @@
         "TrackValidator": "readonly",
         "ErrorHandler": "readonly",
         "UserPreferences": "readonly",
-        "ASSET_LOAD_TIMEOUT_MS": "readonly"
+        "OfflineReady": "readonly",
+        "ASSET_LOAD_TIMEOUT_MS": "readonly",
+        "OFFLINE_ASSET_TIMEOUT_MS": "readonly",
+        "getAssetTimeout": "readonly"
     },
     "rules": {
         "no-unused-vars": "warn",

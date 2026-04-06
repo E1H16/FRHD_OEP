@@ -47,6 +47,11 @@ var GameSettings = {
     "mobile": false,
     "controls": false,
 
+    // Offline / auto-save
+    "offlineMode": !navigator.onLine,
+    "autoSaveEnabled": true,
+    "autoSaveIntervalMs": 30000,
+
     // Playback
     "startPaused": false,
     "waitForKeyPress": true,
