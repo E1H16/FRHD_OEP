@@ -5,8 +5,11 @@ var ASSET_LOAD_TIMEOUT_MS = 300000;
 var OFFLINE_ASSET_TIMEOUT_MS = 5000;
 
 /**
- * Returns the appropriate asset load timeout based on connectivity.
- * When offline, assets time out quickly so the app starts faster.
+ * Returns the appropriate asset load timeout based on current connectivity.
+ *
+ * Note: This is evaluated once when manifest.js is loaded. If connectivity
+ * changes after page load, already-configured timeouts are not updated.
+ * This is intentional — assets are typically loaded during initialization.
  */
 function getAssetTimeout() {
     if (typeof navigator !== "undefined" && !navigator.onLine) {

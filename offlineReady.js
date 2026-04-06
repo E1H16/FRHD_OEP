@@ -17,7 +17,9 @@ var OfflineReady = (function () {
     "use strict";
 
     var AUTO_SAVE_KEY = "frhd_autosave_track";
-    var AUTO_SAVE_INTERVAL_MS = 30000; // 30 seconds
+    var AUTO_SAVE_INTERVAL_MS = (typeof GameSettings !== "undefined" && GameSettings.autoSaveIntervalMs)
+        ? GameSettings.autoSaveIntervalMs
+        : 30000; // fallback: 30 seconds
     var _autoSaveTimer = null;
     var _lastSavedCode = "";
     var _statusListeners = [];
