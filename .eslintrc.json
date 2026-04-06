@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "globals": {
+        "GameSettings": "readonly",
+        "GameManifest": "readonly",
+        "GameLogger": "readonly",
+        "TrackValidator": "readonly",
+        "ErrorHandler": "readonly",
+        "UserPreferences": "readonly",
+        "OfflineReady": "readonly",
+        "ASSET_LOAD_TIMEOUT_MS": "readonly",
+        "OFFLINE_ASSET_TIMEOUT_MS": "readonly",
+        "getAssetTimeout": "readonly"
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "no-undef": "error",
+        "eqeqeq": "warn",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "no-new-func": "error",
+        "no-alert": "warn",
+        "no-console": "warn",
+        "curly": "warn",
+        "no-var": "off",
+        "semi": ["warn", "always"]
+    },
+    "ignorePatterns": [
+        "game.js",
+        "offlineeditor.js",
+        "node_modules/"
+    ]
+}
