@@ -17,6 +17,9 @@ var GameSettings = {
     // Rendering
     "drawFPS": 30,
     "defaultContainerID": "game-container",
+    // Canvas dimensions: use viewport size at load time (capped at 1920x1080).
+    // NOTE: These are captured once at initialization. A window resize listener
+    // should be added when the game engine supports dynamic canvas resizing.
     "width": Math.min(window.innerWidth || 900, 1920),
     "height": Math.min(window.innerHeight || 500, 1080),
     "fullscreen": false,
