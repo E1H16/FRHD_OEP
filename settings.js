@@ -15,7 +15,7 @@ var GameSettings = {
     "platform": "web",
 
     // Rendering
-    "drawFPS": 25,
+    "drawFPS": 30,
     "defaultContainerID": "game-container",
     "width": Math.min(window.innerWidth || 900, 1920),
     "height": Math.min(window.innerHeight || 500, 1080),

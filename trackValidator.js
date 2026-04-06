@@ -32,9 +32,12 @@ var TrackValidator = (function () {
     // Only allow safe characters: digits, minus, comma, space, hash, newline
     var SAFE_CHARS_REGEX = /^[\d\s,\-#\n\r]*$/;
 
-    // A coordinate value must be a finite integer (no floats in FRHD v1)
+    // A coordinate value must be a finite number
     function isValidCoordinate(value) {
-        if (value === "" || value === "-") {return false;}
+        // Empty strings and lone minus signs are not valid numbers
+        if (value === "" || value === "-") {
+            return false;
+        }
         var num = Number(value);
         return Number.isFinite(num) && Math.abs(num) < 1e9;
     }

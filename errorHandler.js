@@ -15,7 +15,7 @@
 var ErrorHandler = (function () {
     "use strict";
 
-    var STORAGE_QUOTA_WARNING_BYTES = 4 * 1024 * 1024; // 4 MB  // eslint-disable-line no-unused-vars
+    var STORAGE_QUOTA_WARNING_BYTES = 4 * 1024 * 1024; // 4 MB
     var DEFAULT_NETWORK_TIMEOUT_MS = 30000; // 30 seconds
     var MAX_RETRY_ATTEMPTS = 3;
 
@@ -77,6 +77,17 @@ var ErrorHandler = (function () {
         safeLocalStorageSet: function (key, value) {
             try {
                 var serialized = JSON.stringify(value);
+
+                // Warn if storage is getting full (approaching typical 5-10 MB limit)
+                var totalSize = 0;
+                for (var i = 0; i < localStorage.length; i++) {
+                    var k = localStorage.key(i);
+                    totalSize += (k.length + (localStorage.getItem(k) || "").length) * 2; // UTF-16
+                }
+                if (totalSize + serialized.length * 2 > STORAGE_QUOTA_WARNING_BYTES) {
+                    showUserError("Storage is nearly full. Consider clearing old saved tracks.");
+                }
+
                 localStorage.setItem(key, serialized);
                 return true;
             } catch (e) {

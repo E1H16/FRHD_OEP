@@ -1,6 +1,6 @@
 {
     "name": "frhd-offline-editor",
-    "version": "0.1.0-alpha",
+    "version": "0.1.0-alpha.0",
     "description": "Offline track editor for Free Rider HD",
     "private": true,
     "scripts": {
